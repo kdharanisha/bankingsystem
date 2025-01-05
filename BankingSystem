@@ -1,0 +1,65 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int pin,deposit,loan,withdrawl;
+        int balance=100;
+        System.out.println("Welcome");
+        System.out.println("insert your card");
+        System.out.println("Nmae:Eniya Account number:8559");
+        System.out.println("enter your pin number");
+        pin=sc.nextInt();
+        if(pin==9976){
+            System.out.println("choose my option");
+            System.out.println("1.Deposit");
+            System.out.println("2.Withdrawl");
+            System.out.println("3.current balance");
+            System.out.println("4.loan offers");
+            System.out.println("5.Exist");
+            int op=sc.nextInt();
+            switch(op){
+                case 1:
+                System.out.println("enter the amount to deposit");
+                deposit=sc.nextInt();
+                balance=balance+deposit;
+                System.out.println("current balance="+balance);
+                    if(balance<0){
+                        System.out.println("need to deposit money");
+                    }
+                break;
+                case 2:
+                System.out.println("enter the amount of withdrawl");
+                withdrawl=sc.nextInt();
+                balance=balance-withdrawl;
+                System.out.println("current balance="+balance);
+                if(balance<0){
+                    System.out.println("need to deposit money");
+                }
+                break;
+                case 3:
+                System.out.println("current balance="+balance);
+                case 4:
+                System.out.println("1.for personal loan details enter 01");
+                System.out.println("2.for home loan details enter 02");
+                loan=sc.nextInt();
+                if(loan==01){
+                    System.out.println("team will call for personal loan");
+                }    
+                else if(loan==02){
+                    System.out.println("team will call for home loan");
+                }
+                else{
+                    System.out.println("invalid");
+                }
+                break;
+                case 5:
+                System.out.println("Thank you");
+                break;
+            }
+        }
+        else{
+            System.out.println("WRONG PIN try again");
+        }
+        sc.close();
+    }
+}
